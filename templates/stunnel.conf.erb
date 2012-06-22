@@ -1,25 +1,29 @@
 ; This stunnel config is managed by Puppet.
+<% if protocol %>protocol = <%= protocol %><% end -%>
+sslVersion = <%= ssl_version %>
+<% if client %>client = yes<% end -%>
 
-cert = <%= certificate %>
-key = <%= private_key %>
-CAfile = <%= ca_file %>
-CRLfile = <%= crl_file %>
-sslVersion = <%= ssl_version_real %>
-verify = 2
-
-chroot = <%= chroot %>
 setuid = <%= user %>
 setgid = <%= group %>
-pid = <%= pid_file %>
+pid = <%= pid %>
+<% if chroot %>chroot = <%= chroot %><% end -%>
 
 socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
+TIMEOUTclose = 0
 
 debug = <%= debug_level %>
-output = <%= log_dest %>
+output = <%= output %>
 
-client = <%= client_on %>
+<% if verify %>verify = <%= verify %><% end -%>
+<% if cert %>cert = <%= cert %><% end -%>
+<% if key %>key = <%= CAfile %><% end -%>
+<% if CAfile %>CAfile = <%= CAfile %><% end -%>
+<% if CRLfile %>CRLfile = <%= CRLfile %><% end -%>
 
-[<%= name -%>]
-accept = <%= accept %>
-connect = <%= connect %>
+<% services.each_pair do |service, param| %>
+[<%= service %>]
+accept = <%= param['accept'] %>
+cert = <%= param['cert'] %>
+connect = <% if param['connect'] %><%= param['connect'] %><% else %><%= connect %><% end -%>
+<% end -%>
