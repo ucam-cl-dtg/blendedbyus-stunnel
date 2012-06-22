@@ -30,6 +30,6 @@ define stunnel::tun(
     owner   => '0',
     group   => '0',
     require => File[$conf_dir],
-  } 
+  }
 
 }
