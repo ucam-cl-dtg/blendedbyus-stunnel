@@ -1,4 +1,6 @@
 define stunnel::tun(
+	$conf_dir		= $stunnel::data::conf_dir
+
 	$protocol		= 'proxy',
 	$ssl_version	= 'all',
 	$client			= false,
