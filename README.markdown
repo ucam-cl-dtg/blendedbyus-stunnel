@@ -3,8 +3,8 @@ What is this?
 
 Derived from the original puppetlabs-stunnel here https://github.com/puppetlabs/puppetlabs-stunnel. 
 This version allows multiple service blocks that will allow multiple certificates to be run on a 
-single port indirectly removing the need for running multiple stunnel instances. Please verify that 
-your stunnel version supports this.
+single port (multiple ip addresses) indirectly removing the need for running multiple stunnel 
+instances. Please verify that your stunnel version supports this.
 
 I've also remove much of the obfuscation of the parameters since I prefer them to correlate with
 the stunnel parameters directly.
