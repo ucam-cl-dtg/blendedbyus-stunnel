@@ -14,12 +14,9 @@ Usage
 
 The following are for use inside of the node or service block.
 
-Simple package service checking
--------------------------------
-    include stunnel
-
 Multiple IP Addresses same destination
 --------------------------------------
+    include stunnel
     Stunnel::Tun {
             require => Package[$stunnel::data::package],
             notify => Service[$stunnel::data::service],
