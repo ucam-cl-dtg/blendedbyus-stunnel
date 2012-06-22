@@ -32,11 +32,4 @@ define stunnel::tun(
     require => File[$conf_dir],
   } 
 
-  file { $chroot:
-    ensure => directory,
-    owner  => $user,
-    group  => $group,
-    mode   => '0600',
-  }
-
 }
