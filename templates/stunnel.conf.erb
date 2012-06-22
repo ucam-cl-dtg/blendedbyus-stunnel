@@ -20,7 +20,6 @@ output = <%= output %>
 <% if key %>key = <%= key %><% end -%>
 <% if cafile %>CAfile = <%= cafile %><% end -%>
 <% if crlfile %>CRLfile = <%= crlfile %><% end -%>
-
 <% services.each_pair do |service, param| -%>
 [<%= service %>]
 accept = <% if param['accept'] %><%= param['accept'] %><% else %><%= accept %><% end %>
