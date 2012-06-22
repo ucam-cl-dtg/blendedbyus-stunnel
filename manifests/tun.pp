@@ -12,7 +12,7 @@ define stunnel::tun(
 	$output			= "/var/log/stunnel4/${name}.log",
 
 	$verify			= false,
-	$cert,
+	$cert			= false,
 	$key			= false,
 	$CAFile			= false,
 	$CRLFile		= false,
