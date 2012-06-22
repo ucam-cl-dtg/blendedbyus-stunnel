@@ -9,23 +9,26 @@ your stunnel version supports this.
 I've also remove much of the obfuscation of the parameters since I prefer them to correlate with
 the stunnel parameters directly.
 
-Usage (in node {} block)
+Usage
 =============
+
+The following are for use inside of the node or service block.
+
 Simple package service checking
 -------------------------------
-include stunnel
+    include stunnel
 
 Multiple IP Addresses same destination
 --------------------------------------
-Stunnel::Tun {
-        require => Package[$stunnel::data::package],
-        notify => Service[$stunnel::data::service],
-}
+    Stunnel::Tun {
+            require => Package[$stunnel::data::package],
+            notify => Service[$stunnel::data::service],
+    }
 
-stunnel::tun { 'https':
-        connect => '127.0.0.1:81',
-        services => {
-                'site.com' => { cert => '/srv/ssl/certs/mysite.com.pem', accept => '1.1.1.1' },
-                'othersite.com' => { cert => '/srv/ssl/certs/mysite.com.pem', accept => '2.2.2.2' },
-        }
-}
+    stunnel::tun { 'https':
+            connect => '127.0.0.1:81',
+            services => {
+                    'site.com' => { cert => '/srv/ssl/certs/mysite.com.pem', accept => '1.1.1.1' },
+                    'othersite.com' => { cert => '/srv/ssl/certs/mysite.com.pem', accept => '2.2.2.2' },
+            }
+    }
