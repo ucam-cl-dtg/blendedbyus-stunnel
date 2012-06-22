@@ -26,8 +26,8 @@ output = <%= output %>
 accept = <% if param['accept'] %><%= param['accept'] %><% else %><%= accept %><% end -%>
 connect = <% if param['connect'] %><%= param['connect'] %><% else %><%= connect %><% end -%>
 <% if param['cert'] %>cert = <%= param['cert'] %><% elseif cert %>cert = <%= cert %><% end -%>
-<% if param['key'] %>key = <%= param['key'] %><% elseif %>key = <%= key %><% end -%>
+<% if param['key'] %>key = <%= param['key'] %><% elseif key %>key = <%= key %><% end -%>
 <% if param['CAfile'] %>CAfile = <%= param['CAfile'] %><% elseif cert %>CAfile = <%= CAfile %><% end -%>
-<% if param['CRLfile'] %>CRLfile = <%= param['CRLfile'] %><% elseif %>CRLfile = <%= CRLfile %><% end -%>
+<% if param['CRLfile'] %>CRLfile = <%= param['CRLfile'] %><% elseif CRLfile %>CRLfile = <%= CRLfile %><% end -%>
 
 <% end -%>
