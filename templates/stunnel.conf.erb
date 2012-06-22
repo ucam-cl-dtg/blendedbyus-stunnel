@@ -21,7 +21,7 @@ output = <%= output %>
 <% if cafile %>CAfile = <%= cafile %><% end -%>
 <% if crlfile %>CRLfile = <%= crlfile %><% end -%>
 
-<% services.each_pair do |service, param| %>
+<% services.each_pair do |service, param| -%>
 [<%= service %>]
 accept = <% if param['accept'] %><%= param['accept'] %><% else %><%= accept %><% end %>
 <% if param['connect'] %>connect = <%= param['connect'] %><% elsif connect %>connect = <%= connect %><% end %>
