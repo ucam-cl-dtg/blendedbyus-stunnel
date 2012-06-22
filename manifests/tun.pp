@@ -8,16 +8,14 @@ define stunnel::tun(
 	$pid			= "/var/run/stunnel4/${name}.pid",
 	$chroot			= false,
 
-	$debug			= '0',
+	$debuglevel			= '0',
 	$output			= "/var/log/stunnel4/${name}.log",
 
 	$verify			= false,
 	$cert			= false,
 	$key			= false,
-	$CAFile			= false,
-	$CRLFile		= false,
-	$connect		= false,
-	$conf_dir		= $stunnel::data::conf_dir,
+	$cafile			= false,
+	$crlfile		= false,
 	
 	$chroot			= false,
 	$services,

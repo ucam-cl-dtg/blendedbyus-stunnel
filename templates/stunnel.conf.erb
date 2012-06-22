@@ -12,7 +12,7 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 TIMEOUTclose = 0
 
-debug = <%= debug %>
+debuglevel = <%= debug %>
 output = <%= output %>
 
 <% if verify %>verify = <%= verify %><% end -%>
@@ -27,7 +27,7 @@ accept = <% if param['accept'] %><%= param['accept'] %><% else %><%= accept %><%
 connect = <% if param['connect'] %><%= param['connect'] %><% else %><%= connect %><% end -%>
 <% if param['cert'] %>cert = <%= param['cert'] %><% elseif cert %>cert = <%= cert %><% end -%>
 <% if param['key'] %>key = <%= param['key'] %><% elseif key %>key = <%= key %><% end -%>
-<% if param['CAfile'] %>CAfile = <%= param['CAfile'] %><% elseif cert %>CAfile = <%= CAfile %><% end -%>
-<% if param['CRLfile'] %>CRLfile = <%= param['CRLfile'] %><% elseif CRLfile %>CRLfile = <%= CRLfile %><% end -%>
+<% if param['cafile'] %>CAfile = <%= param['cafile'] %><% elseif cert %>CAfile = <%= cafile %><% end -%>
+<% if param['crlfile'] %>CRLfile = <%= param['crlfile'] %><% elseif crlfile %>CRLfile = <%= crlfile %><% end -%>
 
 <% end -%>
