@@ -17,6 +17,8 @@ define stunnel::tun(
 	$cafile			= false,
 	$crlfile		= false,
 	
+	$connect		= false,
+	
 	$chroot			= false,
 	$services,
 ) {
