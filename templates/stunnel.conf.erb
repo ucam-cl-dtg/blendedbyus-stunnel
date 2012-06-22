@@ -24,7 +24,7 @@ output = <%= output %>
 <% services.each_pair do |service, param| %>
 [<%= service %>]
 accept = <% if param['accept'] %><%= param['accept'] %><% else %><%= accept %><% end -%>
-connect = <% if param['connect'] %><%= param['connect'] %><% else %><%= connect %><% end -%>
+<% if param['connect'] %>connect = <%= param['connect'] %><% elseif connect %>connect = <%= connect %><% end -%>
 <% if param['cert'] %>cert = <%= param['cert'] %><% elseif cert %>cert = <%= cert %><% end -%>
 <% if param['key'] %>key = <%= param['key'] %><% elseif key %>key = <%= key %><% end -%>
 <% if param['cafile'] %>CAfile = <%= param['cafile'] %><% elseif cert %>CAfile = <%= cafile %><% end -%>
