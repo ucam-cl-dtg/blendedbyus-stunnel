@@ -25,7 +25,7 @@ Multiple IP Addresses same destination
     stunnel::tun { 'https':
             connect => '127.0.0.1:81',
             services => {
-                    'site.com' => { cert => '/srv/ssl/certs/mysite.com.pem', accept => '1.1.1.1' },
-                    'othersite.com' => { cert => '/srv/ssl/certs/mysite.com.pem', accept => '2.2.2.2' },
+                    'site.com' => {  accept => '1.1.1.1', cert => '/srv/ssl/certs/mysite.com.pem' },
+                    'othersite.com' => { accept => '2.2.2.2', cert => '/srv/ssl/certs/mysite.com.pem' },
             }
     }
