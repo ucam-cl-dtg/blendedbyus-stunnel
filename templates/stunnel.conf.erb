@@ -17,9 +17,9 @@ output = <%= output %>
 
 <% if verify %>verify = <%= verify %><% end -%>
 <% if cert %>cert = <%= cert %><% end -%>
-<% if key %>key = <%= CAfile %><% end -%>
-<% if CAfile %>CAfile = <%= CAfile %><% end -%>
-<% if CRLfile %>CRLfile = <%= CRLfile %><% end -%>
+<% if key %>key = <%= key %><% end -%>
+<% if cafile %>cafile = <%= cafile %><% end -%>
+<% if crlfile %>crlfile = <%= crlfile %><% end -%>
 
 <% services.each_pair do |service, param| %>
 [<%= service %>]
