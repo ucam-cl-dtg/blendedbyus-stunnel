@@ -26,14 +26,20 @@ Multiple IP Addresses same destination
     stunnel::tun { 'https':
             connect => '127.0.0.1:81',
             services => {
-                    'site.com' => {  accept => '1.1.1.1', cert => '/srv/ssl/certs/site.com.pem' },
-                    'othersite.com' => { accept => '2.2.2.2', cert => '/srv/ssl/certs/othersite.com.pem' },
+                    'site.com' => {  accept => '1.1.1.1' },
+                    'othersite.com' => { accept => '2.2.2.2' },
             }
     }
 
-### Output (/etc/stunnel4/https.conf)
+### Certificates
+
+Certificates are stored in the /modules/stunnel/files directory by default copied to /etc/stunnel/certs.
+
+### Output
 
 Please note that ruby 1.8 does not order hashes so your services will be in some random order most likely.
+
+**/etc/stunnel/https.conf**
 
     ; This stunnel config is managed by Puppet.
     protocol = proxysslVersion = all
@@ -52,9 +58,14 @@ Please note that ruby 1.8 does not order hashes so your services will be in some
     [othersite.com]
     accept = 2.2.2.2
     connect = 127.0.0.1:81
-    cert = /srv/ssl/certs/site.com.pem
+    cert = /etc/stunnel/certs/site.com.pem
 
     [site.com]
     accept = 1.1.1.1
     connect = 127.0.0.1:81
-    cert = /srv/ssl/certs/othersite.com.pem
+    cert = /etc/stunnel/certs/othersite.com.pem
+
+**/etc/stunnel/certs**
+
+    -rw------- 1 root root 8206 Jun 27 12:36 site.com.pem
+    -rw------- 1 root root 8227 Jun 27 12:36 othersite.com.pem
