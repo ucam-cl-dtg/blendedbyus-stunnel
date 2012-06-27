@@ -26,6 +26,7 @@
 #
 class stunnel::data {
   $conf_dir = '/etc/stunnel'
+  $certs_dir = '/etc/stunnel/certs'
   $package  = 'stunnel4'
   $service  = 'stunnel4'
 }
