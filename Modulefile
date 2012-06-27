@@ -1,5 +1,5 @@
 name    'blendedbyus-stunnel'
-version '1.0.0'
+version '1.1.0'
 source 'https://github.com/BlendedByUs/blendedbyus-stunnel.git'
 author 'BlendedByUs'
 license 'Apache License, Version 2.0'
