@@ -1,5 +1,6 @@
 define stunnel::tun(
 	$conf_dir		= $stunnel::data::conf_dir,
+	$certs_dir		= $stunnel::data::certs_dir,
 
 	$protocol		= 'proxy',
 	$ssl_version		= 'all',
