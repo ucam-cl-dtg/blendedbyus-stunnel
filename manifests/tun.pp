@@ -3,7 +3,7 @@ define stunnel::tun(
 	$certs_dir		= $stunnel::data::certs_dir,
 
 	$protocol		= 'proxy',
-	$ssl_version	= 'all',
+	$ssl_version	= 'TLSv1',
 	$client			= false,
 
 	$user			= 'stunnel4',
@@ -25,7 +25,8 @@ define stunnel::tun(
 	$chroot			= false,
 	$services,
 ) {
-
+  validate_re($ssl_version, '^SSLv2$|^SSLv3$|^TLSv1$',
+    'The option ssl_version must have a value that is either SSLv2, SSLv3, of TLSv1. The default and prefered options is TLSv1.')
   file { "${conf_dir}/${name}.conf":
     ensure  => file,
     content => template("${module_name}/stunnel.conf.erb"),

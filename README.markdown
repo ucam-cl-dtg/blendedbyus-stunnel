@@ -42,7 +42,8 @@ Please note that ruby 1.8 does not order hashes so your services will be in some
 **/etc/stunnel/https.conf**
 
     ; This stunnel config is managed by Puppet.
-    protocol = proxysslVersion = all
+    protocol = proxy
+    sslVersion = all
 
     setuid = stunnel4
     setgid = stunnel4
