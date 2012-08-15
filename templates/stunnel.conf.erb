@@ -24,7 +24,7 @@ output = <%= output %>
 [<%= service %>]
 accept = <% if param['accept'] %><%= param['accept'] %><% else %><%= accept %><% end %>
 <% if param['connect'] %>connect = <%= param['connect'] %><% elsif connect %>connect = <%= connect %><% end %>
-cert = <%= certs_dir %>/<% if param['cert'] %><%= param['cert'] %><% elsif cert %><%= cert %><% else %><%= service %>.pem<% end %>
+<% if param['cert'] %>cert = <%= param['cert'] %><% elsif cert %>cert = <%= cert %><% end %>
 <% if param['key'] %>key = <%= param['key'] %><% elsif key %>key = <%= key %><% end %>
 <% if param['cafile'] %>CAfile = <%= param['cafile'] %><% elsif cert %>CAfile = <%= cafile %><% end %>
 <% if param['crlfile'] %>CRLfile = <%= param['crlfile'] %><% elsif crlfile %>CRLfile = <%= crlfile %><% end %>
